@@ -3,23 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Croquet App</title>
+<title>PlaneSpotted – Privacy Policy &amp; Support</title>
 <style>
+  :root {
+    --text: #1d1d1f;
+    --muted: #6e6e73;
+    --faint: #86868b;
+    --bg: #fff;
+    --panel: #f5f5f7;
+    --border: #e5e5e7;
+    --field-border: #d2d2d7;
+    --accent: #0066cc;
+    --ok: #1c7c3a;
+    --bad: #c0392b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #f5f5f7;
+      --muted: #a1a1a6;
+      --faint: #86868b;
+      --bg: #000;
+      --panel: #1c1c1e;
+      --border: #2c2c2e;
+      --field-border: #3a3a3c;
+      --accent: #4da3ff;
+      --ok: #4cd26b;
+      --bad: #ff6b5e;
+    }
+  }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     max-width: 760px;
     margin: 0 auto;
     padding: 40px 24px 80px;
     line-height: 1.6;
-    color: #1d1d1f;
-    background: #fff;
+    color: var(--text);
+    background: var(--bg);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 24px;
+  }
+  .brand .icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #06456d;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
   }
   h1 {
     font-size: 28px;
     margin-bottom: 4px;
   }
   .updated {
-    color: #6e6e73;
+    color: var(--muted);
     font-size: 14px;
     margin-bottom: 32px;
   }
@@ -27,12 +71,11 @@
     font-size: 19px;
     margin-top: 36px;
     margin-bottom: 8px;
-    border-bottom: 1px solid #e5e5e7;
+    border-bottom: 1px solid var(--border);
     padding-bottom: 6px;
   }
   p, li {
     font-size: 16px;
-    color: #1d1d1f;
   }
   ul {
     padding-left: 22px;
@@ -41,20 +84,20 @@
     margin-bottom: 8px;
   }
   .note {
-    background: #f5f5f7;
+    background: var(--panel);
     border-radius: 10px;
     padding: 16px 18px;
     font-size: 14px;
-    color: #515154;
+    color: var(--muted);
     margin-top: 8px;
   }
   a {
-    color: #0066cc;
+    color: var(--accent);
   }
   footer {
     margin-top: 48px;
     font-size: 13px;
-    color: #86868b;
+    color: var(--faint);
   }
   .contact-form {
     margin-top: 20px;
@@ -66,34 +109,38 @@
     margin-bottom: 12px;
   }
   .form-row input,
+  .contact-form select,
   .contact-form textarea {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 14px;
     font-family: inherit;
     font-size: 15px;
-    color: #1d1d1f;
-    background: #f5f5f7;
-    border: 1px solid #d2d2d7;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--field-border);
     border-radius: 10px;
     outline: none;
     transition: border-color 0.15s;
   }
   .form-row input:focus,
+  .contact-form select:focus,
   .contact-form textarea:focus {
-    border-color: #0066cc;
-    background: #fff;
+    border-color: var(--accent);
+  }
+  .contact-form select {
+    display: block;
+    margin-bottom: 12px;
   }
   .contact-form textarea {
     display: block;
-    width: 100%;
     min-height: 110px;
     resize: vertical;
     margin-bottom: 12px;
   }
   .contact-form button {
     padding: 11px 28px;
-    background: #0066cc;
+    background: var(--accent);
     color: #fff;
     font-family: inherit;
     font-size: 15px;
@@ -110,8 +157,8 @@
     font-size: 14px;
     min-height: 1.4em;
   }
-  .form-status.success { color: #1c7c3a; }
-  .form-status.error   { color: #c0392b; }
+  .form-status.success { color: var(--ok); }
+  .form-status.error   { color: var(--bad); }
   @media (max-width: 540px) {
     .form-row { grid-template-columns: 1fr; }
   }
@@ -119,71 +166,83 @@
 </head>
 <body>
 
+<div class="brand"><span class="icon" aria-hidden="true">✈︎</span> PlaneSpotted</div>
+
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: June 30, 2026</p>
+<p class="updated">Last updated: October 5, 2026</p>
 
-<p>This Privacy Policy describes how the Croquet app ("the App," "we," "us") handles information when you use it. We built this app to be as privacy-respecting as possible — we do not collect personal information, run ads, or sell data to anyone.</p>
+<p>This Privacy Policy describes how the PlaneSpotted app ("the App," "we," "us") handles information when you use it. PlaneSpotted is a logbook for planespotters. We built it to be as privacy-respecting as possible: there are no accounts, no ads, no analytics and no tracking, and we never sell data to anyone.</p>
 
-<h2>Information We Collect</h2>
-<p>The App collects the following limited information:</p>
+<h2>Your Logbook</h2>
+<p>Your sightings, trips, photos, notes and tags are stored on your device. If iCloud sync is turned on (Settings → Sync with iCloud), they are also stored in your own private iCloud database so they appear on your other devices. Only you can read your private iCloud data. We cannot see it.</p>
+
+<h2>What You Choose to Share</h2>
+<p>Sharing is optional and controlled by <strong>Share my stats</strong> in your profile. While it is on and you have set a display name, the App publishes the following to the App's public iCloud database, which other PlaneSpotted users can see:</p>
 <ul>
-  <li><strong>Anonymous usage analytics.</strong> We collect basic, non-identifying analytics about how the App is used — such as which features are opened, session length, crash reports, and general performance data. This helps us fix bugs and improve the App. This data is not linked to your name, email, or any personal identity.</li>
-  <li><strong>Game Center data.</strong> If you choose to enable Game Center, Apple manages achievements and leaderboard data on our behalf. We only receive the minimum information needed to display scores and achievements (such as your Game Center alias and score values). We do not store this data on our own servers, and Apple's own privacy policy governs how Game Center handles your account information.</li>
-  <li><strong>Multiplayer game data (iMessage).</strong> If you play a multiplayer game through the iMessage extension, the player names you enter and the live game state (turn order, ball positions, scores) are shared directly between the devices in that iMessage conversation, the same way any iMessage content is shared. This data is not sent to or stored on our servers — it stays within the message thread, governed by Apple's iMessage infrastructure.</li>
+  <li><strong>Your profile:</strong> display name, home airport, camera, website, friend code and totals (sightings, airframes, aircraft types, airports, countries and trips), plus the spotters you have added as friends.</li>
+  <li><strong>Airport summaries:</strong> for each airport where you have logged sightings, the registrations, aircraft types and airlines you logged there, how many times, and when you were last there. These appear on airport pages and in leaderboards.</li>
+  <li><strong>Recent sightings:</strong> each sighting from the past year (registration, aircraft type, airline, airport and date), used for the weekly, monthly and yearly leaderboards.</li>
 </ul>
+<p>Your photos and notes are never shared. Turning <strong>Share my stats</strong> off deletes all of the above from the public database.</p>
 
 <h2>Information We Do Not Collect</h2>
 <ul>
-  <li>We do not require account creation, sign-up, or login (other than optional Game Center).</li>
-  <li>We do not collect your email address, phone number, or real name.</li>
-  <li>We do not track your precise location.</li>
-  <li>We do not access your contacts, photos, or microphone.</li>
-  <li>We do not serve third-party advertising.</li>
+  <li>We do not require account creation, sign-up or login. PlaneSpotted uses your existing iCloud account.</li>
+  <li>We do not collect your email address or phone number.</li>
+  <li>We do not collect your location. If you allow it, your location is used on your device only, to suggest the nearest airport.</li>
+  <li>We do not upload your photos. Photos you pick stay in your logbook, and images you save from the App are added to your photo library only when you tap Save.</li>
+  <li>We do not use analytics, crash-reporting or advertising services.</li>
   <li>We do not sell or rent your data to anyone, for any reason.</li>
 </ul>
 
-<h2>How We Use Information</h2>
-<p>The limited analytics data we collect is used only to:</p>
+<h2>Third-Party Services</h2>
 <ul>
-  <li>Understand which features people use, so we can improve the App</li>
-  <li>Identify and fix crashes or bugs</li>
-  <li>Monitor general app performance and stability</li>
+  <li><strong>Apple iCloud (CloudKit)</strong> stores your logbook and anything you choose to share. Apple's privacy policy governs iCloud.</li>
+  <li><strong><a href="https://www.adsbdb.com">adsbdb.com</a></strong> receives the aircraft registrations you log, so the App can fill in the type, airline and a reference photo.</li>
+  <li><strong><a href="https://pics.avs.io">pics.avs.io</a></strong> supplies airline logos, using the airline's code.</li>
+  <li><strong>Instagram</strong> receives an image only if you tap Share to Instagram Story.</li>
 </ul>
+<p>None of these requests include your name or any other personal information.</p>
 
-<h2>Data Sharing</h2>
-<p>We do not share, sell, or rent any data to third parties for marketing or advertising purposes. Game Center data is shared only with Apple as required for that feature to function. Multiplayer game data via iMessage is shared only with the other participant(s) in that conversation, as a normal function of the iMessage platform.</p>
+<h2>Other Spotters, Blocking and Reporting</h2>
+<p>Display names you see on airport pages, in friend requests and in leaderboards are chosen by other users. You can block any spotter, which hides them from you, and report a name that is offensive, either from inside the App or with the form below. We review reports and remove offending names within 24 hours.</p>
 
 <h2>Children's Privacy</h2>
-<p>The App does not knowingly collect personal information from children. Since the App does not collect names, emails, or other identifying account information, no personal data is gathered from users of any age beyond the anonymous analytics and optional Game Center/iMessage features described above.</p>
+<p>PlaneSpotted is not directed at children under 13 and does not knowingly collect personal information from them.</p>
 
-<h2>Data Retention</h2>
-<p>Anonymous analytics data is retained only as long as necessary to analyze app performance and improve the App. Multiplayer game data sent via iMessage is not retained by us at all — it exists only within the message thread on your and your contact's devices, subject to Apple's iMessage retention policies.</p>
-
-<h2>Your Choices</h2>
+<h2>Data Retention and Deletion</h2>
 <ul>
-  <li>You can disable Game Center integration at any time in your device's Settings, which will stop achievement and leaderboard syncing.</li>
-  <li>You can decline to use the iMessage multiplayer feature if you do not wish to share player names or game state with another participant.</li>
+  <li>Your logbook stays on your device and in your private iCloud until you delete it. Deleting the App, or turning off iCloud for PlaneSpotted in your device's Settings, removes it from that device.</li>
+  <li>Shared information stays in the public database while <strong>Share my stats</strong> is on. Sightings older than a year are removed automatically. Turning sharing off deletes everything you have shared.</li>
+  <li>To have anything else deleted, contact us below.</li>
 </ul>
 
 <h2>Changes to This Policy</h2>
 <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last updated" date.</p>
 
-<h2>Contact Us</h2>
-
-<p>If you have questions about this Privacy Policy, you can reach us at <a href="mailto:pale.lime7134@fastmail.com">pale.lime7134@fastmail.com</a> or use the form below.</p>
+<h2 id="support">Support &amp; Contact</h2>
+<p>For questions, bug reports, feedback or to report a spotter's name, email <a href="mailto:pale.lime7134@fastmail.com?subject=PlaneSpotted">pale.lime7134@fastmail.com</a> or use the form below.</p>
 
 <form id="contact-form" class="contact-form" action="https://formspree.io/f/xyekgqba" method="POST" novalidate>
+  <input type="hidden" name="app" value="PlaneSpotted" />
+  <input type="hidden" name="_subject" value="PlaneSpotted message" />
   <div class="form-row">
-    <input type="text"  name="name"    placeholder="Your name"       required />
-    <input type="email" name="email"   placeholder="your@email.com"  required />
+    <input type="text"  name="name"  placeholder="Your name"      required />
+    <input type="email" name="email" placeholder="your@email.com" required />
   </div>
-  <textarea name="message" placeholder="Your question or comment…" required></textarea>
+  <select name="topic" aria-label="Topic">
+    <option>Question or feedback</option>
+    <option>Bug report</option>
+    <option>Report a spotter's name</option>
+    <option>Delete my data</option>
+  </select>
+  <textarea name="message" placeholder="Your question or comment. To report a spotter, include their name and the airport where you saw it." required></textarea>
   <button type="submit">Send message</button>
   <p id="form-status" class="form-status" aria-live="polite"></p>
 </form>
 
 <footer>
-  &copy; 2026 Croquet App. All rights reserved.
+  &copy; 2026 PlaneSpotted. All rights reserved.
 </footer>
 
 <script>
@@ -192,6 +251,11 @@
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!form.checkValidity()) {
+      status.textContent = 'Please fill in your name, email and message.';
+      status.className = 'form-status error';
+      return;
+    }
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.textContent = 'Sending…';
@@ -205,7 +269,7 @@
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
-        status.textContent = 'Message sent — thanks! We\'ll get back to you soon.';
+        status.textContent = 'Message sent. Thanks! We\'ll get back to you soon.';
         status.className = 'form-status success';
         form.reset();
       } else {
